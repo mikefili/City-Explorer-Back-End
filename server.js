@@ -34,7 +34,7 @@ function searchToLatLong(query) {
 function searchToWeather(query) {
   const weatherData = require('./data/weather.json');
   console.log('query', query);
-  const weather = new Weather(weatherData.hourly.data[0]);
+  const weather = new Weather(weatherData.daily.data[0]);
   console.log('weather', weather);
   weather.search_query = query;
   return weather;
@@ -46,10 +46,9 @@ function Location(data) {
   this.longitude = data.geometry.location.lng;
 }
 
-function Weather(wData) {
-  this.time = wData.time;
-  this.hourly_query = wData.summary;
-  this.temperature = wData.temperature;
+function Weather(data) {
+  this.time = data.time;
+  this.summary = data.summary;
 }
 
 app.get('/home', function(req, res) {
