@@ -13,15 +13,35 @@ app.use(express.static('./'));
 
 app.get('/location', (request, response) => {
   console.log('my request object:', request.body);
-  const locationData = serachToLatLong(request.query.data);
+  const locationData = searchToLatLong(request.query.data);
   response.send(locationData);
 });
 
-function serachToLatLong(query) {
+app.get('/weather', (request, response) => {
+  const weatherData = searchToWeather(request.query.data);
+  response.send(weatherData);
+});
+
+// helper function - lat/long
+function searchToLatLong(query) {
   const geoData = require('./data/geo.json');
   const location = new Location(geoData.results[0]);
   location.search_query = query;
   return location;
+}
+
+// helper function - weather
+function searchToWeather(query) {
+  const weatherData = require('./data/weather.json');
+  const weather = new Weather(weatherData.daily.data[0]);
+  weather.search_query = query;
+  return weather;
+}
+
+function Weather(data) {
+  this.daily_query = data.daily.time;
+  this.latitude = data.geometry.location.lat;
+  this.longitude = data.geometry.location.lng;
 }
 
 function Location(data) {
