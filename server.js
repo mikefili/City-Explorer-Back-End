@@ -30,9 +30,9 @@ function Location(data) {
   this.longitude = data.geometry.location.lng;
 }
 
-// app.get('/home', function(req, res) {
-//   res.sendFile(`${__dirname}/public/index.html`);
-// });
+app.get('/home', function(req, res) {
+  res.sendFile(`${__dirname}/public/index.html`);
+});
 
 app.listen(PORT, function() {
   console.log(`listening on port ${PORT}.`);
