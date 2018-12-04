@@ -1,31 +1,75 @@
-{
-  "darkSky" : [
-    {
-      "latitude": 47.8209301,
-      "longitude": -122.3151314,
-      "timezone": "America/New_York",
-      "currently": {
-          "time": 1509993277,
-          "summary": "Drizzle",
-          "icon": "rain",
-          "nearestStormDistance": 0,
-          "precipIntensity": 0.0089,
-          "precipIntensityError": 0.0046,
-          "precipProbability": 0.9,
-          "precipType": "rain",
-          "temperature": 66.1,
-          "apparentTemperature": 66.31,
-          "dewPoint": 60.77,
-          "humidity": 0.83,
-          "pressure": 1010.34,
-          "windSpeed": 5.59,
-          "windGust": 12.03,
-          "windBearing": 246,
-          "cloudCover": 0.7,
-          "uvIndex": 1,
-          "visibility": 9.84,
-          "ozone": 267.44
+{    "long_name" : "Lynnwood",
+  "short_name" : "Lynnwood",
+  "latitude": 47.85356789999999,
+  "longitude":-122.261618,
+  "timezone": "America/New_York",
+  "hourly": {
+    "summary": "Snow (6–9 in.) and windy starting in the afternoon.",
+    "icon": "snow",
+    "data": [
+      {
+        "time": 255589200,
+        "summary": "Mostly Cloudy",
+        "icon": "partly-cloudy-night",
+        "precipIntensity": 0,
+        "precipProbability": 0,
+        "temperature": 22.8,
+        "apparentTemperature": 16.46,
+        "dewPoint": 15.51,
+        "humidity": 0.73,
+        "pressure": 1026.78,
+        "windSpeed": 4.83,
+        "windBearing": 354,
+        "cloudCover": 0.78,
+        "uvIndex": 0,
+        "visibility": 9.62
       }
-    }
-  ]
+      
+    ]
+  },
+  "daily": {
+    "data": [
+      {
+        "time": 255589200,
+        "summary": "Snow (9–14 in.) and windy starting in the afternoon.",
+        "icon": "snow",
+        "sunriseTime": 255613996,
+        "sunsetTime": 255650764,
+        "moonPhase": 0.97,
+        "precipIntensity": 0.0354,
+        "precipIntensityMax": 0.1731,
+        "precipIntensityMaxTime": 255657600,
+        "precipProbability": 1,
+        "precipAccumulation": 7.337,
+        "precipType": "snow",
+        "temperatureHigh": 31.84,
+        "temperatureHighTime": 255632400,
+        "temperatureLow": 28.63,
+        "temperatureLowTime": 255697200,
+        "apparentTemperatureHigh": 20.47,
+        "apparentTemperatureHighTime": 255625200,
+        "apparentTemperatureLow": 13.03,
+        "apparentTemperatureLowTime": 255697200,
+        "dewPoint": 24.72,
+        "humidity": 0.86,
+        "pressure": 1016.41,
+        "windSpeed": 22.93,
+        "windBearing": 56,
+        "cloudCover": 0.95,
+        "uvIndex": 1,
+        "uvIndexTime": 255621600,
+        "visibility": 4.83,
+        "temperatureMin": 22.72,
+        "temperatureMinTime": 255596400,
+        "temperatureMax": 32.04,
+        "temperatureMaxTime": 255672000,
+        "apparentTemperatureMin": 11.13,
+        "apparentTemperatureMinTime": 255650400,
+        "apparentTemperatureMax": 20.47,
+        "apparentTemperatureMaxTime": 255625200
+      }
+    ]
+  },
+  "offset": -5
 }
+   
