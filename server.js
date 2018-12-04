@@ -39,7 +39,9 @@ function searchToWeather(query) {
 }
 
 function Weather(data) {
-  this.time = data.daily.time;
+  this.latitude = data.latitude;
+  this.longitude = data.longitude;
+  this.time = data.currently.time;
   this.forecast = data.daily.summary;
 }
 
