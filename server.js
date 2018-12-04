@@ -10,15 +10,14 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.static('./'));
+app.use(express.urlencoded({extended: true}));
 
 app.get('/location', (request, response) => {
-  console.log('my request object:', request.body);
   const locationData = searchToLatLong(request.query.data);
   response.send(locationData);
 });
 
 app.get('/weather', (request, response) => {
-  console.log('my request object:', request.body)
   const weatherData = searchToWeather(request.query.data);
   response.send(weatherData);
 });
@@ -34,7 +33,9 @@ function searchToLatLong(query) {
 // helper function - weather
 function searchToWeather(query) {
   const weatherData = require('./data/weather.json');
-  const weather = new Weather(weatherData.daily.data[0]);
+  console.log('query', query);
+  const weather = new Weather(weatherData.darkSky[0]);
+  console.log('weather', weather);
   weather.search_query = query;
   return weather;
 }
@@ -46,7 +47,7 @@ function Location(data) {
 }
 
 function Weather(wData) {
-  this.daily_query = wData.darkSky.summary;
+  this.daily_query = wData.darkSky.currently.summary;
   this.time = wData.darkSky.time;
   this.temperature = wData.darkSky.temperature;
 }
