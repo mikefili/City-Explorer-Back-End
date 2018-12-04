@@ -33,15 +33,14 @@ function searchToLatLong(query) {
 // helper function - weather
 function searchToWeather(query) {
   const weatherData = require('./data/weather.json');
-  const weather = new Weather(weatherData.daily.data[0]);
+  const weather = new Weather(weatherData.hourly.data[0]);
   weather.search_query = query;
   return weather;
 }
 
 function Weather(data) {
-  this.daily_query = data.daily.time;
-  this.latitude = data.geometry.location.lat;
-  this.longitude = data.geometry.location.lng;
+  this.time = data.daily.time;
+  this.forecast = data.daily.summary;
 }
 
 function Location(data) {
