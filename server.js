@@ -46,9 +46,9 @@ function Location(data) {
 }
 
 function Weather(wData) {
-  this.daily_query = wData.summary;
-  this.time = wData.time;
-  this.temperature = wData.temperature;
+  this.daily_query = wData.darkSky.summary;
+  this.time = wData.darkSky.time;
+  this.temperature = wData.darkSky.temperature;
 }
 
 app.get('/home', function(req, res) {
